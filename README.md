@@ -35,7 +35,7 @@ Vous trouverez les maquettes ici :
 - Les sources seront placées dans le dossier `src` et compilées dans le dossier `/public/assets/`.
 - Les données devront être récupérées en JavaScript en interrogant un endpoint : `/public/endpoint.php`.
 - Cet endpoint devra interroger le client de l'API : `/library/Client.php`.
-* Les 2 points ci-dessus ne sont pas obligatoires mais permettent que nous ayons une vue sur vos capacités en PHP.
+Les 2 points ci-dessus ne sont pas obligatoires mais permettent que nous ayons une vue sur vos capacités en PHP.
 - La gestion des erreurs lors d'un appel API n'est pas demandée.
 - Les animations ne sont pas imposées, à vous de nous proposer quelque chose de léger et fluide, exemples :
   - Animation des boutons CTA et de la modale
