@@ -17,8 +17,6 @@
     "imagesloaded": "^5.0.0",
     "include-media": "^2.0.0",
     "locomotive-scroll": "^5.0.0-beta.9",
-    "sass-flex-mixin": "^1.0.3",
-    "scroll-lock": "^2.1.5",
-    "split-type": "^0.3.4"
+    "scroll-lock": "^2.1.5"
   }
 }
