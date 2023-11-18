@@ -12,8 +12,7 @@ export default class Modale {
         this.DOM.image = document.querySelector('.js-modale-image');
         this.DOM.decoration = document.querySelector('.js-modale-decoration');
         this.DOM.listItems = document.querySelectorAll('.js-modale-list-item');
-
-        this.isModaleOpen = false;
+        this.DOM.listItemsElements = document.querySelectorAll('.js-modale li');
 
         this.initTimeline();
         this.addEventListeners();
@@ -24,11 +23,13 @@ export default class Modale {
      */
     initTimeline() {
         this.timeline = gsap.timeline({ paused: true })
-            .set(this.DOM.root.querySelectorAll('li'), { opacity: 0, delay: 0.5 })
-            .set(this.DOM.root.querySelectorAll('img'), { yPercent: 50 })
-            .to(this.DOM.root, {yPercent: -100})
-            .to(this.DOM.root.querySelectorAll('img'), { yPercent: 0 }, "<")
-            .to(this.DOM.root.querySelectorAll('li'), { opacity: 1, stagger: 0.02, duration: 2 });
+            .to(this.DOM.root, { yPercent: -100 })
+            .fromTo([
+                this.DOM.name,
+                this.DOM.tagline,
+                this.DOM.description,
+                this.DOM.listItemsElements
+            ], { opacity: 0 }, { opacity: 1, duration: 3, ease: "power4.out", stagger: 0.05 })
     }
 
     /**
@@ -48,10 +49,10 @@ export default class Modale {
      */
     close () {
         this.DOM.closeBtn.classList.remove('--active');
-        this.timeline.timeScale(2).reverse();
+        this.timeline.timeScale(3).reverse();
         setTimeout(() => {
             enablePageScroll(this.DOM.root);
-        }, 1500);
+        }, 2000);
     }
 
     /**

@@ -27,13 +27,13 @@ export default class BeerItem {
         nodeElement.appendChild(wrapperNode);
 
         // Name
-        const nameNode = document.createElement('div');
+        const nameNode = document.createElement('h1');
         nameNode.classList.add('beer-item_name');
         nameNode.innerText = this.data.name;
         wrapperNode.appendChild(nameNode);
 
         // Tagline
-        const taglineNode = document.createElement('div');
+        const taglineNode = document.createElement('span');
         taglineNode.classList.add('beer-item_tagline');
         taglineNode.innerText = this.data.tagline;
         wrapperNode.appendChild(taglineNode);
