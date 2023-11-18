@@ -11,14 +11,38 @@
 .button {
     display: inline-flex;
     appearance: none;
-    padding: rem(16) rem(24) rem(14);
+    padding: rem(19) rem(20) rem(19);
     font-size: rem(16);
-    line-height: 1.5;
+    line-height: 1;
+    align-items: center;
 
     background-color: var(--color-yellow);
     border-radius: rem(40);
+    font-weight: $font-weight-bold;
+
+    transition: background-color 1s $ease-expo-out;
+
+    &::after {
+        content: '';
+        width: rem(12);
+        height: rem(12);
+        margin-left: rem(20);
+        vertical-align: middle;
+        background-image: url('/assets/images/icon-plus.svg');
+        transform: rotate(0deg);
+
+        transition-property: transform;
+        transition-duration: 0s;
+        transition-timing-function: $ease-expo-out;
+    }
+
+    &:hover {
+        background-color: var(--color-dark-yellow);
+
+        &::after {
+            transform: rotate(-90deg);
+            transition-duration: 1s;
+        }
+    }
 }
 
-.button_icon {
-    margin-right: rem(8);
-}

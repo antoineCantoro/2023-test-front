@@ -17,6 +17,8 @@ footer {
 
     border-top: solid 1px var(--color-gray);
 
+    background-color: #fff;
+
     @include media('>=desktop') {
         padding-top: rem(60);
         padding-bottom: rem(60);

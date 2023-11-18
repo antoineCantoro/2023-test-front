@@ -14,9 +14,6 @@ export default class Modale {
         this.DOM.image = document.querySelector('.js-modale-image')
         this.DOM.decoration = document.querySelector('.js-modale-decoration')
         this.DOM.listItems = document.querySelectorAll('.js-modale-list-item')
-        //js-modale-name
-
-        console.log("modale ready");
 
         this.isModaleOpen = false
 
@@ -24,74 +21,87 @@ export default class Modale {
         this.addEventListeners()
     }
 
+    /**
+     * Create modale timeline animation
+     */
     initTimeline() {
         this.timeline = gsap.timeline({paused: true})
-            .set(this.DOM.root.querySelectorAll('li'), { opacity: 0 })
+            .set(this.DOM.root.querySelectorAll('li'), { opacity: 0, delay: 0.5 })
             .set(this.DOM.root.querySelectorAll('img'), { yPercent: 50 })
             .to(this.DOM.root, {yPercent: -100})
             .to(this.DOM.root.querySelectorAll('img'), { yPercent: 0 }, "<")
             .to(this.DOM.root.querySelectorAll('li'), { opacity: 1, stagger: 0.02, duration: 2 })
     }
 
+    /**
+     * Open Modale
+     */
     open (id) {
-        console.log('open ' + id);
         this.updateHtmlContent(id)
-
-
         this.DOM.closeBtn.classList.toggle('--active')
 
         this.isModaleOpen = true
         this.timeline.play()
-        disablePageScroll();
+        disablePageScroll(this.DOM.root);
     }
 
+    /**
+     * Close Modale
+     */
     close () {
         this.DOM.closeBtn.classList.remove('--active')
-        this.timeline.reverse()
-        enablePageScroll();
+        this.timeline.timeScale(2).reverse()
+        setTimeout(() => {
+            enablePageScroll(this.DOM.root);
+        }, 1500)
     }
 
+    /**
+     * Add Events listeners
+     */
     addEventListeners() {
-        // Debug
-        // document.querySelector('header').addEventListener('click', () => {
-        //     document.querySelector('header').classList.toggle('--active')
-        //     this.DOM.root.classList.toggle('--active')
-        // })
-
         this.DOM.closeBtn.addEventListener('click', () => {
             this.close()
         })
     }
 
+    /**
+     * Update modale list datas
+     */
     updateItem(element, data) {
+
+        // Common keys
         const key = element.getAttribute('data-key')
         element.innerText = data[key]
 
-        if (key === "ebc-srm") {
-            element.innerText = `${data["ebc"]}/${data["srm"]}`
-        }
+        // Specific keys
 
-        if (key === "yeast") {
-            element.innerText = data.ingredients.yeast
-        }
-        // console.log(data.ingredients);
+            // If EBC-SRM key, concat both of the datas
+            if (key === "ebc-srm") {
+                element.innerText = `${data["ebc"]}/${data["srm"]}`
+            }
 
-        if (key === "malt" || key === "hops") {
-            let listIngredients = ""
-            console.log(data.ingredients.malt);
+            // If yeast item, get data deeper from ingredient
+            if (key === "yeast") {
+                element.innerText = data.ingredients.yeast
+            }
 
-            data.ingredients.malt.forEach((ingredient)  => {
-                listIngredients += `${ingredient.name}<br/>`
-            })
+            // If key is an array, concat values into a single string
+            if (key === "malt" || key === "hops") {
+                let listIngredients = ""
 
-            element.innerHTML = listIngredients
+                data.ingredients[key].forEach((ingredient)  => {
+                    listIngredients += `${ingredient.name}<br/>`
+                })
 
-        }
+                element.innerHTML = listIngredients
+            }
     }
 
+    /**
+     * Update modale data
+     */
     updateHtmlContent(data) {
-        console.log(data);
-
         // Replace data
         this.DOM.name.innerText = data.name
         this.DOM.tagline.innerText = data.tagline
@@ -99,7 +109,7 @@ export default class Modale {
         this.DOM.image.setAttribute("src", data.image_url)
         this.DOM.decoration.innerText = data.name
 
-        // Update
+        // Update List data
         this.DOM.listItems.forEach(element => {
             this.updateItem(element, data)
         })

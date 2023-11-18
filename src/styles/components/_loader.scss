@@ -11,16 +11,14 @@
 // ======================================================
 
 .loader {
-
-    display: none !important;
-
     font-family: $secondary-font-families;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: rem(54);
+    font-size: rem(32);
+    text-transform: uppercase;
 
     position: fixed;
     left: 0;
@@ -29,21 +27,13 @@
     height: 110%;
     border-radius: 30px;
 
-    background-color: var(--color-isabelline);
+    background-color: var(--color-yellow);
     color: var(--color-dark);
-
-    transition-property: background-color, color;
-    transition-duration: 1s;
-    transition-timing-function: $ease-out;
 
     z-index: map.get($z-indexes, 'loader');
 
-    @include media(">=tablet") {
-        font-size: rem(124);
-    }
-
     @include media(">=desktop") {
-        font-size: rem(150);
+        font-size: rem(54);
     }
 }
 

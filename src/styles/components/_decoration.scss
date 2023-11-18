@@ -1,0 +1,19 @@
+// ======================================================
+// Components / Decoration
+// ======================================================
+
+@use "../utils/" as *;
+
+// Base
+// ======================================================
+
+body {
+    background-image: url('/assets/images/deco-beers.svg');
+    background-size: calc(100vw / 1440 * 682);
+    background-repeat: repeat-y;
+    background-position: center;
+
+    @include media("<desktop") {
+        background-size: calc(100vw / 414 * 160);
+    }
+}

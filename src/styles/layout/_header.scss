@@ -52,14 +52,28 @@
 // ======================================================
 
 .header_close-modale {
+    transform: rotate(0);
+    transition-property: transform;
+    transition-duration: 0s;
+    transition-timing-function: $ease-out;
+
+    &:hover {
+        transform: rotate(-90deg);
+        transition-duration: 1s;
+    }
+
+    &:not(.--active) {
+        pointer-events: none;
+    }
+
     .close_top,
     .close_bottom {
         opacity: 0;
         transform-origin: center;
 
         transition-property: transform, opacity;
-        transition-duration: 0.4s;
-        transition-timing-function: var(--ease-out);
+        transition-duration: 1s;
+        transition-timing-function: $ease-out;
     }
 
     .close_top {

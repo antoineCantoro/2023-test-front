@@ -12,6 +12,9 @@
     display: grid;
     grid-template-columns: 1fr;
 
+    padding-top: rem(120);
+    padding-bottom: var(--footer-height);
+
     padding-left: calc(100% / 24 * 2);
     padding-right: calc(100% / 24 * 2);
 
@@ -23,6 +26,7 @@
         padding-left: calc(100% / 24);
         padding-right: calc(100% / 24);
 
+        padding-bottom: rem(180);
         padding-bottom: rem(340);
 
         gap: 0 calc(100% / 24 * 2);

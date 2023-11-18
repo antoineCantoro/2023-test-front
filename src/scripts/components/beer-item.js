@@ -2,12 +2,11 @@ export default class BeerItem {
     constructor (data) {
         this.data = data
         this.node = null
-
-        // console.log(this.data);
-
-        // this.addEventListeners()
     }
 
+    /**
+     * Generate beer HTML element for the ".beers-grid" element
+     */
     generateHtmlNode() {
 
         // Root
@@ -15,11 +14,23 @@ export default class BeerItem {
         nodeElement.classList.add('beer-item')
         nodeElement.setAttribute('data-id', this.data.id)
 
+        // // Visual Wrapper
+        // const visualWrapperNode = document.createElement('div')
+        // visualWrapperNode.classList.add('beer-item_visual-wrapper')
+        // nodeElement.appendChild(visualWrapperNode)
+
         // Visual
         const imageNode = document.createElement('img')
         imageNode.classList.add('beer-item_visual')
+        imageNode.setAttribute('src', '/assets/images/bottle-placeholder.png')
         imageNode.setAttribute('src', this.data.image_url)
         nodeElement.appendChild(imageNode)
+
+        // // Visual Overlay
+        // const imageOverlayNode = document.createElement('img')
+        // imageOverlayNode.classList.add('beer-item_visual-overlay')
+        // imageOverlayNode.setAttribute('src', this.data.image_url)
+        // visualWrapperNode.appendChild(imageOverlayNode)
 
         // Information Wrapper
         const wrapperNode = document.createElement('div')
@@ -41,19 +52,12 @@ export default class BeerItem {
         // Button
         const buttonNode = document.createElement('button')
         buttonNode.classList.add('button')
-        buttonNode.innerText = `SEE MORE +`
+        buttonNode.innerText = `SEE MORE`
 
         wrapperNode.appendChild(buttonNode)
 
         this.node = nodeElement
-        // this.addEventListeners()
 
-        return nodeElement
+        return this.node
     }
-
-    // addEventListeners() {
-    //     this.node.addEventListener('click', () => {
-    //         console.log("ok");
-    //     })
-    // }
 }

@@ -10,7 +10,6 @@
 @use './utils/functions';
 @use './utils/mixins';
 @use './utils/responsive';
-@use './utils/helpers';
 
 // Base
 // ======================================================
@@ -18,7 +17,6 @@
 @use './base/reset';
 @use './base/base';
 @use './base/fonts';
-@use './base/typography';
 
 
 // Layout
@@ -31,9 +29,9 @@
 // Components
 // ======================================================
 
-@use './components/container';
 @use './components/loader';
 @use './components/button';
 @use './components/modale';
 @use './components/beers-grid';
 @use './components/beer-item';
+@use './components/decoration';
