@@ -1,0 +1,34 @@
+// ======================================================
+// Base / Typography
+// ======================================================
+
+@use "../utils/" as *;
+
+
+p {
+    font-size: 1.5em;
+    line-height: 1.333;
+    margin: 0.5em 0;
+}
+
+
+// Headings
+// ======================================================
+
+// .heading {
+//     font-family: $secondary-font-families;
+//     font-weight: $font-weight-semi-bold;
+
+//     &.--h1 {
+//         font-size: calc(100vw / 360 * 64);
+//         line-height: 1;
+
+//         @include media(">=tablet") {
+//             font-size: calc(100vw / 768 * 124);
+//         }
+
+//         @include media(">=desktop") {
+//             font-size: min(rem(200), calc(100vw / 1440 * 150));
+//         }
+//     }
+// }

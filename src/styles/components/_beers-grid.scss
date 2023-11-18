@@ -1,0 +1,30 @@
+// ======================================================
+// Component / Beers Grid
+// ======================================================
+
+@use "../utils/" as *;
+
+
+// Base
+// ======================================================
+
+.beers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    padding-left: calc(100% / 24 * 2);
+    padding-right: calc(100% / 24 * 2);
+
+    gap: rem(60);
+
+    @include media(">=desktop") {
+        grid-template-columns: 1fr 1fr;
+
+        padding-left: calc(100% / 24);
+        padding-right: calc(100% / 24);
+
+        padding-bottom: rem(340);
+
+        gap: 0 calc(100% / 24 * 2);
+    }
+}

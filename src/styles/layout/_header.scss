@@ -1,0 +1,96 @@
+// ======================================================
+// Layout / Header
+// ======================================================
+
+@use "sass:list";
+@use "sass:map";
+@use "../utils/" as *;
+
+
+// Base
+// ======================================================
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+
+    border-bottom: solid 1px var(--color-gray);
+
+    z-index: map.get($z-indexes, 'header');
+
+    @include media('>=desktop') {
+        padding-top: rem(30);
+        padding-bottom: rem(30);
+    }
+}
+
+.header_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: calc(100% / 24 * 2);
+    padding-right: calc(100% / 24 * 2);
+}
+
+// Logo
+// ======================================================
+
+.header_logo {
+    height: auto;
+    max-width: rem(14);
+
+    @include media('>=desktop') {
+        max-width: rem(26);
+    }
+}
+
+// Button
+// ======================================================
+
+.header_close-modale {
+    .close_top,
+    .close_bottom {
+        opacity: 0;
+        transform-origin: center;
+
+        transition-property: transform, opacity;
+        transition-duration: 0.4s;
+        transition-timing-function: var(--ease-out);
+    }
+
+    .close_top {
+        transform: rotate(0deg);
+    }
+    .close_bottom {
+        transform: rotate(0deg);
+    }
+}
+
+.--active {
+    .close_top {
+        opacity: 1;
+        transform: rotate(45deg);
+    }
+    .close_bottom {
+        opacity: 1;
+        transform: rotate(-45deg);
+    }
+}
+
+
+
+
+// Symbol
+// ======================================================
+
+.header_symbol {
+    font-size: rem(32);
+
+    @include media('>=desktop') {
+        font-size: rem(50);
+    }
+}

@@ -1,0 +1,24 @@
+// ======================================================
+// Component / Button
+// ======================================================
+
+@use "../utils/" as *;
+
+
+// Button
+// ======================================================
+
+.button {
+    display: inline-flex;
+    appearance: none;
+    padding: rem(16) rem(24) rem(14);
+    font-size: rem(16);
+    line-height: 1.5;
+
+    background-color: var(--color-yellow);
+    border-radius: rem(40);
+}
+
+.button_icon {
+    margin-right: rem(8);
+}

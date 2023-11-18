@@ -1,0 +1,31 @@
+// ======================================================
+// Base / Fonts
+// ======================================================
+
+@use "../utils/" as *;
+
+
+// Druk Condensed - Super
+// ======================================================
+
+@font-face {
+    font-family: $primary-font;
+    src: url('../fonts/druk-cond-super.woff2') format('woff2'),
+         url('../fonts/druk-cond-super.woff') format('woff');
+    font-weight: $font-weight-normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+// Druk Wide - Super
+// ======================================================
+
+@font-face {
+    font-family: $secondary-font;
+    src: url('../fonts/druk-wide-super.woff2') format('woff2'),
+         url('../fonts/druk-wide-super.woff') format('woff');
+    font-weight: $font-weight-bold;
+    font-style: normal;
+    font-display: swap;
+}

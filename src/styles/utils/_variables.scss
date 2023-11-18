@@ -1,0 +1,93 @@
+// ======================================================
+// Utils / Variables
+// ======================================================
+
+// Typography
+// ======================================================
+
+// Base
+$font-size:                16px;
+$primary-font:             "Druk Condensed";
+$secondary-font:           "Druk Wide";
+$tertiary-font:            "Helvetica Neue";
+$primary-font-families:    $primary-font, Impact, sans-serif;
+$secondary-font-families:  $secondary-font, Impact, sans-serif;
+$tertiary-font-families:   $tertiary-font, Helvetica, Arial, sans-serif;
+
+// Weights
+$font-weight-normal:     400;
+$font-weight-semi-bold:  600;
+$font-weight-bold:       700;
+
+
+// Colors
+// ======================================================
+
+:root {
+    --color-yellow:         #FFCF00;
+    --color-gray:           #CCCCCC;
+    --color-light-gray:     #D8D8D8;
+}
+
+
+// Grid
+// ======================================================
+
+// $im-flexgrid-settings: (
+//   'support-check': false,
+//   'support-type': '@supports', // otherwise support-type: 'modernizr'
+//   'total-columns': 12, // Total columns
+//   'container-class': 'container',
+//   'grid-class': 'grid',
+//   'cell-class': 'grid__cell',
+//   'grid-separator': '--',
+//   'number-separator': '-',
+//   'breakpoint-separator': \@,
+//   'include-offset': true,
+//   'offset-class': 'offset',
+//   'include-push': false,
+//   'push-class': 'push',
+//   'include-pull': false,
+//   'pull-class': 'pull',
+//   'include-squish': false,
+//   'squish-class': 'squish',
+//   'include-order': false,
+//   'order-class': 'order',
+//   'include-wrap-alignment': false,
+//   'include-direction-alignment': false,
+//   'include-justify-alignment': false,
+//   'include-item-alignment': true,
+//   'include-content-alignment': false,
+//   'include-self-alignment': false,
+//   'gutter-size': 1.875rem,
+//   'default-gutters': true,
+//   'include-gutterless': false,
+//   'include-max-width': true,
+//   'include-trailer': false,
+//   'trailer-size': 0,
+// );
+
+
+// CSS Transitions
+// @link https://easings.net/
+// ======================================================
+
+$ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
+$ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+
+// Z-indexes Management
+// ======================================================
+
+$z-indexes: (
+    "debug":          999,
+    "loader":         100,
+    "overlay":         99,
+    "header":          20,
+    "navigation":      20,
+    "canvas+1":        11,
+    "canvas":          10,
+    "canvas-1":         9,
+    "above":            1,
+    "below":           -1
+);

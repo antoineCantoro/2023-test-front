@@ -1,0 +1,95 @@
+// ======================================================
+// Component / Beer Item
+// ======================================================
+
+@use "../utils/" as *;
+
+
+// Base
+// ======================================================
+
+.beer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include media(">=desktop") {
+        flex-direction: row;
+    }
+
+    &:nth-child(odd) {
+        @include media(">=desktop") {
+            text-align: right;
+            justify-content: flex-end;
+        }
+    }
+
+    &:nth-child(even) {
+        @include media(">=desktop") {
+            text-align: left;
+            margin-top: rem(160);
+        }
+    }
+}
+
+.beer-item_wrapper {
+    @include media(">=desktop") {
+        .beer-item:nth-child(even) & {
+            order: 1;
+            margin-left: calc(100vw / 24);
+        }
+
+        .beer-item:nth-child(odd) & {
+            margin-right: calc(100vw / 24);
+        }
+    }
+}
+
+
+.beer-item_name {
+    font-size: rem(40);
+    font-family: $primary-font-families;
+    margin-bottom: rem(10);
+    text-transform: uppercase;
+
+    @include media(">=desktop") {
+        font-size: rem(80);
+    }
+}
+
+.beer-item_tagline {
+    display: block;
+    font-family: $tertiary-font-families;
+    font-weight: 900;
+    font-size: rem(16);
+    margin-bottom: rem(30);
+
+    @include media(">=desktop") {
+        font-size: rem(20);
+    }
+}
+
+.beer-item_visual {
+    max-width: rem(140);
+    max-height: rem(280);
+    width: auto;
+    height: auto;
+
+    @include media("<desktop") {
+        margin-bottom: rem(30);
+    }
+
+    @include media(">=desktop") {
+        // width: rem(240);
+        // max-height: rem(815);
+
+        max-width: rem(240);
+        max-height: rem(815);
+
+        // 240
+        .beer-item:nth-child(odd) & {
+            order: 1;
+        }
+    }
+}

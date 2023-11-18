@@ -1,0 +1,35 @@
+// ======================================================
+// Utils / Functions
+// ======================================================
+
+@use "sass:math";
+@use "./variables" as *;
+
+// Removes the unit from the given number.
+//
+// @param  {number} $number The number to strip.
+// @return {number}
+
+@function stripUnit($number) {
+    @return math.div($number, $number * 0 + 1);
+}
+
+
+// Convert px value to rem.
+//
+// @param  {number} $number The number to convert.
+// @return {number}
+
+@function rem($pxValue) {
+    @return #{math.div(stripUnit($pxValue), stripUnit($font-size))}rem;
+}
+
+
+// Convert hexa color values to rgb values.
+//
+// @param  {hex} $hex The hexa value to convert.
+// @return {hex}
+
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}

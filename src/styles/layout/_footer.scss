@@ -1,0 +1,60 @@
+// ======================================================
+// Layout / Footer
+// ======================================================
+
+@use "../utils/" as *;
+
+
+// Base
+// ======================================================
+
+footer {
+    padding-top: rem(32);
+    padding-bottom: rem(32);
+
+    text-transform: uppercase;
+    font-size: rem(24);
+
+    border-top: solid 1px var(--color-gray);
+
+    @include media('>=desktop') {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+    }
+}
+
+
+// Wrapper
+// ======================================================
+
+.footer_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: calc(100% / 24 * 2);
+    padding-right: calc(100% / 24 * 2);
+}
+
+
+// Content
+// ======================================================
+
+.footer {
+    p, a {
+        font-size: rem(16);
+
+        @include media('>=desktop') {
+            font-size: rem(24);
+        }
+    }
+
+    p {
+        font-family: $tertiary-font-families;
+        font-weight: 900;
+        margin: 0;
+    }
+    a {
+
+    }
+}

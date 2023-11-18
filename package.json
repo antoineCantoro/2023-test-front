@@ -1,5 +1,24 @@
 {
   "name": "2020-test-front",
   "description": "Exercice d'évaluation pour le poste de développeur Front-End",
-  "private": true
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "disable-scroll": "^0.6.0",
+    "gsap": "^3.12.2",
+    "include-media": "^2.0.0",
+    "lenis": "^0.0.2",
+    "sass-flex-mixin": "^1.0.3",
+    "scroll-lock": "^2.1.5",
+    "scrolltrigger": "^1.0.1"
+  }
 }
